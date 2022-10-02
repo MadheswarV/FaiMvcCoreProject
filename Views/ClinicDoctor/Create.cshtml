@@ -1,0 +1,44 @@
+﻿@model ClinicDoctorManagement.Models.ClinicDoctorClass
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="text-center text-primary">Add Doctor</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-action="Create">
+                        <div class="form-group">
+                            <label asp-for="docName">Doctor Name</label>
+                            <input type="text" asp-for="docName" class="form-control" placeholder="Enter Doctor name" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="docSpeciality">Doctor's Speciality</label>
+                            <input type="text" asp-for="docSpeciality" class="form-control" placeholder="Enter Department" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="docService">Doctor's Experience</label>
+                            <input type="text" asp-for="docService" class="form-control" placeholder="Enter Year(s) of service" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="docAvailability">Doctor Timings</label>
+                            <input type="text" asp-for="docAvailability" class="form-control" placeholder="Timings" />
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="docImage">Doctor's ImageUrl</label>
+                            <input type="text" asp-for="docImage" class="form-control" placeholder="Paste the image Url" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Add Doctor" class="btn btn-sm btn-outline-success float-left" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

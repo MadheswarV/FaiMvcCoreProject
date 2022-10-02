@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ClinicDoctorManagement.Models.ClinicDoctorClass>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-center text-primary">Clinic Doctors</h1>
+            <a class="btn btn-sm btn-success m-2" asp-controller="ClinicDoctor" asp-action="Create">Add Doctors</a>
+            <table class="table-bordered">
+                <tr class="text-center">
+                    <th>DoctorId</th>
+                    <th>Doctor Name</th>
+                    <th>Speciality</th>
+                    <th>Years of Service</th>
+                    <th>Availability</th>
+                    <th>Doctor Image</th>
+                    <th>Actions</th>
+                </tr>
+                @foreach(var d in Model)
+            {
+            <tr class="text-center">
+                <td>@d.docId</td>
+                <td>@d.docName</td>
+                <td>@d.docSpeciality</td>
+                <td>@d.docService</td>
+                <td>@d.docAvailability</td>
+                <td>
+                    <img src="@d.docImage" height=170 width=170>
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-warning" asp-controller="ClinicDoctor" asp-action="Edit"
+                       asp-route-id="@d.docId">Edit</a>
+                    <a class="btn btn-sm btn-danger" asp-controller="ClinicDoctor" asp-action="Delete"
+                       asp-route-id="@d.docId">Delete</a>
+                </td>
+            </tr>
+            }
+            </table>
+        </div>
+    </div>
+</div>
+
